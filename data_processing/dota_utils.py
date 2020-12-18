@@ -9,8 +9,7 @@ import math
     some basic functions which are useful for process DOTA data
 """
 
-wordname_15 = ['plane', 'baseball-diamond', 'bridge', 'ground-track-field', 'small-vehicle', 'large-vehicle', 'ship', 'tennis-court',
-               'basketball-court', 'storage-tank',  'soccer-ball-field', 'roundabout', 'harbor', 'swimming-pool', 'helicopter']
+wordname_15 = ['small-vehicle', 'large-vehicle']
 
 def custombasename(fullname):
     return os.path.basename(os.path.splitext(fullname)[0])

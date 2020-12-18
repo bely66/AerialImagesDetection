@@ -3,8 +3,9 @@ import os
 import numpy as np
 from PIL import Image
 src_path = "data_annotation/DOTA-v1.5_train"
-img_path = ""
-out_path = ""
+img_path = "data_annotation/dota_images/images"
+out_path = "data_annotation/dota_images"
+
 ## trans dota format to format YOLO(darknet) required
 def dota2darknet(imgpath, txtpath, dstpath, extractclassname):
     """
@@ -29,7 +30,8 @@ def dota2darknet(imgpath, txtpath, dstpath, extractclassname):
                 if (sum(bbox <= 0) + sum(bbox >= 1)) >= 1:
                     continue
                 if (obj['name'] in extractclassname):
-                    id = extractclassname.index(obj['name'])
+                    # This id should be constant across all datasets for cars
+                    id = 1
                 else:
                     continue
                 outline = str(id) + ' ' + ' '.join(list(map(str, bbox)))
